@@ -2,6 +2,12 @@
 layout: page
 ---
 
+<!-- badges: start -->
+  [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
+  ![Eclipse Marketplace](https://img.shields.io/eclipse-marketplace/last-update/EnviMonitor?style=plastic)
+  
+<!-- badges: end -->
+
 # PERK
 
 `PERK` – an [R][R] based application to predict and visualize environmental concentration and risk using pharmaceutical prescription data collected at fine spatial resolution 
