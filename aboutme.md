@@ -4,6 +4,6 @@ title: About
 subtitle: 
 ---
 
-This website is to host the tools developed by [Environmental Chemistry and Public Health Research Group](https://people.bath.ac.uk/bkh20/) at [Department of Chemistry](https://www.bath.ac.uk/departments/department-of-chemistry/) in [University of Bath](https://www.bath.ac.uk/), UK.
+This website features the tools created by the [Environmental Chemistry and Public Health Research Group](https://people.bath.ac.uk/bkh20/) at the [Department of Chemistry](https://www.bath.ac.uk/departments/department-of-chemistry/) at the [University of Bath](https://www.bath.ac.uk/) in the United Kingdom.
 
-We are using [R](https://cran.r-project.org/), an open-source programming language for statistical analysis to import, tidy, transform, visualise, model and communicate data. R is central to our workflow because it provides an efficient and reproducible way of working that encourages both openness and collaboration.
+To import, clean, manipulate, visualise, model, and convey data, we use R, an open-source statistical programming language. R is essential to our workflow because it provides an efficient and repeatable method of working that promotes openness and cooperation.
