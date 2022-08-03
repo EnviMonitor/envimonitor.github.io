@@ -2,7 +2,7 @@
 layout: page
 ---
 
-## PERK
+# PERK
 
 `PERK` – an [R][R] based application to predict and visualize environmental concentration and risk using pharmaceutical prescription data collected at fine spatial resolution 
 Recent scientific advancements enabled us to identify and quantify a wide range of pharmaceutical drugs in the natural environment and helped us to evaluate their impacts on exposed aquatic environmental species and humans [1, 2]. However, quantification of several pharmaceutical drugs is still very limited, partly because of the limitations in analytical method development.  
