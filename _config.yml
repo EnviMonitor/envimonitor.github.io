@@ -20,9 +20,10 @@ author: Kishore Kumar Jagadeesan
 ###############################################
 
 navbar-links:
-  Demo App : "http://51.141.234.162/shiny/perkdemo/"
-  Documentation:
-    - PERK: "https://pranaviz.bath.ac.uk/PrAna/"
+  About: "about"
+  Software Tools:
+    - PrAna: "https://pranaviz.bath.ac.uk/PrAna/"
+    - PERK: "perk-app"
   Publications: "pub-app"
 
 ################
