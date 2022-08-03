@@ -1,7 +1,7 @@
 ---
 layout: post
-title: New Website!
-subtitle: New year new website
+title: First post!
+subtitle: New website
 gh-repo: PERK
 gh-badge: [star, fork, follow]
 tags: [test]
