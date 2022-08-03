@@ -22,7 +22,7 @@ author: Kishore Kumar Jagadeesan
 navbar-links:
   About: "aboutme"
   Software Tools:
-    - PrAna: "https://pranaviz.bath.ac.uk/PrAna/"
+    - PrAna: "prana-app"
     - PERK: "perk-app"
   Publications: "pub-app"
 
