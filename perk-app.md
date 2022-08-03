@@ -4,7 +4,7 @@ layout: page
 
 ## PERK
 
-`PERK` – an R package with in-built application to predict and visualize environmental concentration and risk using pharmaceutical prescription data collected at fine spatial resolution 
+`PERK` – an [R][R] package with in-built application to predict and visualize environmental concentration and risk using pharmaceutical prescription data collected at fine spatial resolution 
 
 Recent scientific advancements enabled us to identify and quantify a wide range of pharmaceutical drugs in the natural environment and helped us to evaluate their impacts on exposed aquatic environmental species and humans [1, 2]. However, quantification of several pharmaceutical drugs is still very limited, partly because of the limitations in analytical method development.  
 
@@ -26,7 +26,7 @@ For England, the tool uses the prescription data from PrAna7, an R package to ca
 
 - **BNF codes and names** are also from the NHS Business Service Authority's Information Portal, used under the terms of the Open Government Licence. 
 
-- [**dm+d weekly release data**][dm+d]is also from the NHS Business Service Authority's Information Portal, used under the terms of the Open Government Licence. 
+- [**dm+d weekly release data**][dm+d] is also from the NHS Business Service Authority's Information Portal, used under the terms of the Open Government Licence. 
 
 ### WWTP Data 
 
