@@ -4,98 +4,59 @@ layout: page
 
 <!-- badges: start -->
   [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
-  [![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
-  [![CRAN status](https://www.r-pkg.org/badges/version/PrAna)](https://CRAN.R-project.org/package=PrAna)
-<!-- badges: end -->
   
-# PrAna
+<!-- badges: end -->
 
-[`PrAna`](https://pranaviz.github.io/) aims to aggregate and normalise England’s national level prescription data, for all groups of drugs. The name is an acronym for _**Pr**escription **Ana**lysis_
+# PERK
 
-## Background
+`PERK` – an [R][R] based application to predict and visualize environmental concentration and risk using pharmaceutical prescription data collected at fine spatial resolution 
+Recent scientific advancements enabled us to identify and quantify a wide range of pharmaceutical drugs in the natural environment and helped us to evaluate their impacts on exposed aquatic environmental species and humans `[1, 2]`. However, quantification of several pharmaceutical drugs is still very limited, partly because of the limitations in analytical method development.  
 
-During the last decade, wide range of **active pharmaceutical ingredients (APIs)** have been identified and quantified in aquatic environment across several studies and indicated their impacts on exposed environmental species and humans. For the prediction of total amount of the APIs released to the environment, information about APIs consumption data is vital. Globally, several methods were reported to estimate the APIs consumption data based on the national prescription data, manufacturers, importers and dispenser’s data.
+Predicting these pharmaceuticals’ environmental concentrations using different modelling approaches is an important aspect in the assessment of their environmental risk. Specific guidelines were developed and issued by European Agency for the Evaluation of Medicinal Products and United States Food and Drug Administration for predicted environmental concentration (PEC) of pharmaceuticals for human use in different environmental matrices `[3-5]`. These guidelines help to prioritise the risk from drugs that are already in use and calculate the potential impact of a new pharmaceutical drugs may have on the environment once released.
+PERK acronym for Predicting Environmental concentrations and RisK assessment, is an R package with in-built application tool, aims to facilitate automated modelling and reporting of predicted environmental concentrations of a comprehensive set of pharmaceuticals derived from a wide range of therapeutic classes with different mode of action.  
 
-In the UK, national prescription data provided by [National Health Service][NHS digital] was used to calculate the consumption data. This data is freely accessible and consist of individual files for each month. With the large file with over 10 million records every month, the data from the NHS cannot be used for the direct calculation of the prescription levels of different APIs. Re-organisation and processing of the files is required before to do any exploration or analysis and to speed up the data reading. 
+The tool helps users to input their measured concentration, to compare the predicted and measured concentrations of the APIs by means of the PEC/MEC ratio, to establish whether the predicted equations used tend to underestimate or overestimate measured values `[6]`. 
+It provides a consistent interactive user interface in a familiar dashboard layout, enabling users to visualise predicted values and compare with their measured values without any hassles. Users can download data and graphs generated using the tool in .csv or publication ready images. 
 
-The aim of `PrAna` is to aggregate and normalize prescription data to calculate total prescribed quantity of different APIs, using open source statistical software [R language][@R-base]. 
+## Data sources: 
 
-Apart, from the calculation of the total prescribed quantity of an API or a group of APIs, specified to a postcode or region, We have also developed, _an open interactive web-based tool_, `PrAnaViz` with the processed dataset for the period `2015` to `2019`.
+### Prescription Data 
+For England, the tool uses the prescription data from PrAna`[7]`, an R package to calculate and visualize England NHS prescribing data. The data used in PrAna are as follows, 
+- [**Prescribing data and Practice information**][NHS digital] are from the monthly files published by the [NHS Business Service Authority][NHSBSA], used under the terms of the Open Government Licence. 
+- **BNF codes and names** are also from the NHS Business Service Authority's Information Portal, used under the terms of the Open Government Licence. 
+- [**dm+d weekly release data**][dm+d] is also from the NHS Business Service Authority's Information Portal, used under the terms of the Open Government Licence. 
 
-`PrAnaViz` facilitates users **to visualise, explore and report** different spatiotemporal and long-term prescription trends for wider use. 
+### WWTP Data 
+The following dataset are provided from wastewater treatment plant (WWTP) collaborators, 
+- **Catchment map** used to define the boundaries and capture the GP Practices inside the catchments for the prescription data calculations. 
+- **Daily flow data** used to calculate the load and population equivalent. 
+- **Population Equivalent** i.e., number of inhabitants per catchment zone. 
+- **Site information** required to predict information such as recovery percentage. 
+- **Water quality** parameters to predict population equivalent. 
 
+### API properties 
+- **Metabolites and Excretion factors** collected from literatures and data repositories such as Drug bank. 
+- **Recovery percentage** collected from literatures, calculated from measured concentration from previous experiments, predicted using WWTP site information. 
+- **Physiochemical properties** collected from literatures and data repositories. 
+- **Ecotoxicity data** collected from literatures and data repositories. 
 
-## Workflow
+## Acknowledgments: 
+This work is a part of the Wastewater Fingerprinting for Public Health Assessment (ENTRUST) project funded by Wessex Water and EPSRC IAA (grant no. EP/R51164X/1). 
 
-Below is an overview of the workflow:
+## References: 
+1. Webb, S.;  Ternes, T.;  Gibert, M.; Olejniczak, K., Indirect human exposure to pharmaceuticals via drinking water. Toxicology Letters 2003, 142 (3), 157-167. 
+2. Crane, M.;  Watts, C.; Boucard, T., Chronic aquatic environmental risks from exposure to human pharmaceuticals. Science of The Total Environment 2006, 367 (1), 23-41. 
+3.	(EMA), E. M. A. Guideline On The Environmental Risk Assessment Of Medicinal Products For Human Use EMEA/CHMP/SWP/4447/00 corr 2 2006, p. 1-12. https://www.ema.europa.eu/documents/scientific-guideline/guideline-environmental-risk-assessment-medicinal-products-human-use-first-version_en.pdf (accessed May 30, 2019). 
+4.	(EMA), E. M. A. Environmental risk assessment of medicinal products for human use draft EMEA/CHMP/SWP/4447/00 Rev. 1 2018, p. 1-48. https://www.ema.europa.eu/documents/scientific-guideline/draft-guideline-environmental-risk-assessment-medicinal-products-human-use-revision-1_en.pdf (accessed September 13, 2021). 
+5.	Administration, U. S. F. a. D. Guidance for industry: Environmental assessment of human drug and biologics applications. CMC 6. Revision 1. 1998. https://www.fda.gov/down loads/Drugs/Guidances/ucm070561.pdf. (accessed September 13, 2021). 
+6.	He, K.;  Borthwick, A. G.;  Lin, Y.;  Li, Y.;  Fu, J.;  Wong, Y.; Liu, W., Sale-based estimation of pharmaceutical concentrations and associated environmental risk in the Japanese wastewater system. Environment International 2020, 139, 105690. 
+7.	Kishore Kumar, J.;  James, G.;  Sue, G.;  Ruth, B.; Barbara, K.-H., BMC Medical Informatics and Decision Making 2021. 
 
-- **Data Preparation**: Download monthly [NHS prescription datasets][NHSBSA] and Dictionary of medicines and devices release files [(dm+d)][dm+d].
-- **Data Conversion**: Aggregation and conversion of the locally stored datasets into practice wise dataset achieved using the functions in `PrAna`.
-- **Visualise and Analyse the data**: Visualise and analyse the processed dataset using the in-built ShinyApp `PrAnaViz`.
-- **Database service**: Linking of the processed dataset to the `PrAnaViz` can be achieved by uploading the processed dataset to a local or a remote database service, for example, [_MySQL._][MySQL]
-- **Download images and processed data**: Users can download processed data as **_.csv_** file and publication ready image **_.eps_** and **_.pdf_** files.
-
-## Data sources
-
-- Prescribing data and Practice information are from the monthly files published by the [NHS Business Service Authority][NHSBSA], used under the terms of the Open Government Licence.
-- BNF codes and names are also from the [NHS Business Service Authority's Information Portal][NHSBSA], used under the terms of the Open Government Licence.
-- [dm+d weekly release data][dm+d] is also from the NHS Business Service Authority's Information Portal, used under the terms of the Open Government Licence.
-
-
-## Get this package
-
-`PrAna` can be installed as any other R package, as follows,
-
-To install the development version of PrAna from GitHub:
-```
-install.packages("devtools")
-library(devtools)
-install_github("jkkishore85/PrAna")
-```
-However, since it is dependent on some other software tools some extra steps are required for the installation. Please see the installation section in the handbook <!--[handbook-inst] -->for more information.
-
-However, for a better guide to get started it is recommended to read the tutorial. <!--]  [tutorial].-->
-
-<!--
-## Shiny App Docker
-A R Shiny application that allows you to generate and visualise prescription data genereated using PrAna.
-
-### Run App locally in Docker container
-To run the app in an isolated environment install docker here. Then navigate to project root directory and build the container image by executing the following in you CLI:
-
-```
-docker build -t my-shinyapp-image . 
-```
-This might take a couple of minutes. After the image is build start the container by running:
-
-```
-docker run -d --name my-shiny-app -p 3838:3838 my-shinyapp-image
-```
-
-Open a browser and enter localhost:3838 to access the app.
-
-### Stop the App
-To stop the container enter:
-```
-docker stop my-shiny-app
-```
-If you want to delete the container execute:
-```
-docker rm my-shiny-app -f
-```
---> 
-## Acknowledgements
-
-This package was built as a part of the **Wastewater Fingerprinting for Public Health Assessment (ENTRUST)** project funded by **University of Bath**, **Wessex Water** and **EPSRC IAA** _(grant no. EP/R51164X/1)_. 
 
 ## Disclaimer
-We accept no liability for any errors in the data or its publication here: use this data at your own risk. You should not use this data to make individual prescribing decisions.
+We accept no liability for any errors in the data or its publication here: use this data at your own risk.
 
 [R]: https://www.r-project.org/
-<!--[tutorial]: https://kishorejagadeesan.com/PrAna/handbook_bd/pranaviz.html -->
 [NHS digital]: https://digital.nhs.uk/organisation-data-service/data-downloads/gp-data
-<!--[handbook-inst]: https://kishorejagadeesan.com/PrAna/handbook_bd/install.html -->
 [NHSBSA]: https://applications.nhsbsa.nhs.uk/infosystems/welcome
 [dm+d]: https://isd.digital.nhs.uk/trud3/user/guest/group/0/pack/6
-[dm+d2]: https://isd.digital.nhs.uk/trud3/user/guest/group/0/pack/6/subpack/239/releases
-[MySQL]: https://www.mysql.com/
