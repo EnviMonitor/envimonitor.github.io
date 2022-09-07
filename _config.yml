@@ -20,7 +20,7 @@ author: Kishore Kumar Jagadeesan
 ###############################################
 
 navbar-links:
-  Demo App : "http://51.141.234.162/shiny/PERK/"
+  Demo App : "http://51.141.234.162/shiny/DemoPERK/"
   Documentation:
     - PERK: "perk-app"
   Publications: "pub-app"
